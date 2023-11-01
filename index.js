@@ -1,7 +1,3 @@
-$('[contenteditable="true"]').keypress(function(e) {
-    if (isNaN(String.fromCharCode(e.which))) e.preventDefault();
-});
-
 var points = [-Infinity, Infinity];
 var point_info = [-1, -1];
 
