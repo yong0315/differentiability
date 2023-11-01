@@ -276,7 +276,6 @@ function IsCanDifferentiateRange() {
 
             new_row.cells[4].innerText = '미분 가능';
             new_row.cells[4].setAttribute("class", "yes");
-            for(let i = 0; i < 5; i++) console.log(new_row.cells[i]);
         }
 
         result_dot.setAttribute("style", "display: none;");
