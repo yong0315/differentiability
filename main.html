@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="center">
+        <div class="title">
+            함수 설정
+            <span class="sub-title">
+                Function Settings
+            </span>
+        </div>
+        <section class="content">
+            <div class="func-size">
+                <button class="col-plus" onclick="InsertRow();">열 추가</button>
+                <button class="col-del" onclick="DeleteRow();">열 삭제</button>
+            </div>
+            <div class="func">
+                <table class="func-set">
+                    <thead>
+                        <tr>
+                            <td>범위</td>
+                            <td>1</td>
+                            <td>x</td>
+                            <td>x<sup>2</sup></td>
+                            <td>x<sup>3</sup></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="front">&#40;-∞, ∞&#41;</td>
+                            <td contenteditable="true">4</td>
+                            <td contenteditable="true">3</td>
+                            <td contenteditable="true">2</td>
+                            <td contenteditable="true">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="func-point">
+                <button onclick="InsertPoint();">분기점 추가</button>
+                <span>x =<span contenteditable="true" id="insert">0</span>에서 분기</span>
+                <div class="point-form">
+                    <input type="radio" name="point" value="right" checked>
+                    <span>f(x) = f(x<sup>+</sup>)</span>
+                    <input type="radio" name="point" value="left">
+                    <span>f(x) = f(x<sup>-</sup>)</span>
+                </div>
+            </div>
+            <div class="func-point">
+                <button onclick="DeletePoint();">분기점 삭제</button>
+                <span>x =<span contenteditable="true" id="delete">0</span>에서 분기</span>
+            </div>
+        </section>
+        <div class="title">
+            미분가능성 확인
+            <span class="sub-title">
+                Differentiability Check
+            </span>
+        </div>
+        <div class="option">
+            <input type="radio" name="check" value="dot" checked>
+            <span>x =<span contenteditable="true" id="check">0</span>에서의 미분가능성</span>
+            <input type="radio" name="check" value="range">
+            <span>실수 전체 집합에서의 미분가능성</span>
+            <button onclick="IsCanDifferentiate();">확인</button>
+        </div>
+        <div class="result-dot" style="display: none;">
+            <table class="detail">
+                <thead>
+                    <tr>
+                        <td>함수</td>
+                        <td>함수값</td>
+                        <td>좌극한</td>
+                        <td>우극한</td>
+                        <td>결과</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="front">f(x)<span class="sub-txt">원래 함수</span></td>
+                        <td id="x-val">-</td>
+                        <td id="x-left">-</td>
+                        <td id="x-right">-</td>
+                        <td id="x-res" class="yes">연속</td>
+                    </tr>
+                    <tr>
+                        <td class="front">f'(x)<span class="sub-txt">도함수</span></td>
+                        <td id="dx-val">-</td>
+                        <td id="dx-left">-</td>
+                        <td id="dx-right">-</td>
+                        <td id="dx-res" class="no">미분 불가능</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="result-range" style="display: none;">
+            <table class="detail">
+                <thead>
+                    <tr>
+                        <td>범위</td>
+                        <td>f(x)</td>
+                        <td>f'(x)</td>
+                        <td>연속성</td>
+                        <td>미분가능성</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
